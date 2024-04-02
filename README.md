@@ -1,6 +1,6 @@
 # DirectoryCleaner
 
-DirectoryCleaner is a Python-based tool designed to help you efficiently manage your filesystem by identifying and removing duplicate files. Leveraging advanced hashing algorithms, it ensures accurate detection and safe elimination of duplicates, freeing up valuable disk space and reducing clutter.
+DirectoryCleaner is a Python-based utility designed to help users efficiently manage and clean up their directories by finding and removing duplicate files. With an intuitive command-line interface, DirectoryCleaner offers a simple yet powerful solution to declutter your file system and reclaim valuable disk space.
 
 ## Features
 
@@ -9,47 +9,59 @@ DirectoryCleaner is a Python-based tool designed to help you efficiently manage 
 - **Customization**: Allows users to customize scanning depth, file size limits, and more.
 - **User-Friendly CLI**: Simple and intuitive command-line interface for easy operation.
 - **Open-Source**: Encourages community contributions and feedback.
+- **Find Duplicate Files**: Quickly identifies duplicate files in a specified directory and its subdirectories.
+- **Dry Run Mode**: Allows users to see which files would be considered duplicates without making any changes.
+- **User Confirmation**: Prompts users for confirmation before deleting files, ensuring no accidental data loss.
+- **Deletion Logging**: Keeps a record of all deleted files for review.
+- **Visual Progress Indicator**: Includes a spinner to indicate that the process is running, enhancing user experience for long-running operations.
 
-## Installation
+## Getting Started
 
-1. Clone the repository:
+### Prerequisites
+
+- Python 3.6 or newer
+
+### Installation
+
+1. Clone the repository to your local machine:
    ```
    git clone https://github.com/tsullc46/DirectoryCleaner.git
    ```
-2. Navigate to the project directory:
+2. Navigate to the DirectoryCleaner directory:
    ```
    cd DirectoryCleaner
    ```
-3. Install required dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
 
-## Usage
+### Usage
 
-To start cleaning directories, run:
+To start using DirectoryCleaner, run the following command in your terminal:
 
 ```
-python directory_cleaner.py <path_to_directory>
+python main.py <path-to-directory> [--dry-run]
 ```
 
-Options:
-- `-d, --delete`: Automatically delete duplicates after confirmation.
-- `-b, --backup`: Create a backup before deleting files.
+- `<path-to-directory>`: The path to the directory you want to clean up.
+- `--dry-run` (optional): Use this option to perform a dry run without deleting any files.
 
-For detailed help and more options, run:
+### Example
 
 ```
-python directory_cleaner.py --help
+python main.py /path/to/my/directory --dry-run
 ```
+
+This command will display the duplicate files found in `/path/to/my/directory` without actually deleting them.
+
+## Modules
+
+- `main.py`: The entry point of the application.
+- `find_duplicates.py`: Contains logic to find duplicate files.
+- `file_hashing.py`: Responsible for generating file hashes.
+- `file_deletion.py`: Handles the deletion of files with user confirmation.
+- `spinner.py`: Provides a visual indicator for ongoing processes.
 
 ## Contributing
 
-We welcome contributions from the community! If you'd like to contribute, please:
-- Fork the repository.
-- Create a new branch for your feature or fix.
-- Commit your changes.
-- Push the branch and open a pull request.
+Contributions to the DirectoryCleaner project are welcome! Please refer to the CONTRIBUTING.md file for guidelines.
 
 ## License
 
